@@ -1,0 +1,41 @@
+Voller Name: STM32F411VET6
+Serie: STM32F411xE
+
+
+100 MHz CPU/125 DMIPS
+
+Specification: http://www.st.com/content/ccc/resource/technical/document/datasheet/b3/a5/46/3b/b4/e5/4c/85/DM00115249.pdf/files/DM00115249.pdf/jcr:content/translations/en.DM00115249.pdf
+    - Pins S.38ff
+Reference Manual: http://www.st.com/content/ccc/resource/technical/document/reference_manual/9b/53/39/1c/f7/01/4a/79/DM00119316.pdf/files/DM00119316.pdf/jcr:content/translations/en.DM00119316.pdf
+Programming Manual: http://www.st.com/content/ccc/resource/technical/document/programming_manual/6c/3a/cb/e7/e4/ea/44/9b/DM00046982.pdf/files/DM00046982.pdf/jcr:content/translations/en.DM00046982.pdf
+
+Pins:
+    4 I/O ports (A, B, C, D)
+    GPIOx_IDR	    input data register
+    GPIOx_ODR	    output data register
+    GPIOx_MODER	    mode configuration register (2 bit pro pin)
+
+    Alternate Function: gpio_mode_setup(GPIOx, GPIO_MODE_AF, ...) gpio_set_af(GPIOx, GPIO_AFy, ...)
+    
+    Per port:
+	16 Pins
+
+ADC:
+    GPIOx_MODER in analog machen
+    Pins cannot be 5V tolerant!!!
+
+    V_{REF-} <= V_{IN} <= V_{REF+}
+
+Timers:
+    Allowed to be read or written while they are running. (Writing to registers might take effect only when auto-reloading timer)
+    TIMx_ARR	    auto-reload value	=> frequency
+    TIMx_CCRx	    capture/compare	=> duty cycle
+
+Interrupts:
+    EXTI0 geht auf PA0, PB0, PC0 oder PD0
+    EXTI1 geht auf PA1, PB1, PC1 oder PD1
+
+TODO
+
+Too slow?
+    - Is ART enabled?
