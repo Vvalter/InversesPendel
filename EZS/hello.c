@@ -151,7 +151,6 @@ void registerPinInterrupts(void) {
 			);
 	cyg_interrupt_attach(interrupt_isr_handle_a1);
 	cyg_interrupt_unmask(CYGNUM_HAL_INTERRUPT_EXTI1);
-
 }
 
 void cyg_user_start(void)
@@ -164,7 +163,6 @@ void cyg_user_start(void)
 	flag_a1 = 0;
 
 	registerPinInterrupts();
-
 
 	/* Thread erzeugen ... */
 	cyg_thread_create(PRIO, &polling_thread, 0, "Pin polling thread", polling_stack, STACKSIZE, &polling_handle, &polling_data);

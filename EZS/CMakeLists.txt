@@ -32,7 +32,7 @@ set(LIBEZS_SOURCES
 ECOS_EZS_ADDLIB("${OPENCM3_PATH}/lib/libopencm3_stm32f4.a")
 
 SET(SRC_LIST
-	hello.c
+	pwm.c
 	${LIBEZS_SOURCES}
 	)
 
