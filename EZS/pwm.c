@@ -23,7 +23,8 @@
 #define PWM_TIMER_TICKS_PER_MICROSECOND 84.0
 
 /// PWM Frequency, default is 62 kHz
-#define PWM_FREQUENCY_kHz 162.0
+// 162 corresponds to 80kHz (80.78kHz)
+#define PWM_FREQUENCY_kHz (162.0*0.2)
 
 /// PWM Period, set automatically by the options above
 #define PWM_PERIOD ((1.0/PWM_FREQUENCY_kHz) * 1000.0 \
@@ -136,5 +137,5 @@ void ezs_dac_write_my(uint8_t value) {
 void cyg_user_start(void)
 {
 	ezs_dac_init_my();
-	ezs_dac_write_my(128);
+	ezs_dac_write_my(64);
 }
