@@ -28,7 +28,7 @@ void polling_thread(cyg_addrword_t arg)
 
     int success = initRotaryEncoderTimer(TIM2, GPIOA, GPIO5, GPIO_AF1, GPIOA, GPIO1, GPIO_AF1);
     success = initRotaryEncoderTimer(TIM3, GPIOC, GPIO6, GPIO_AF2, GPIOC, GPIO7, GPIO_AF2);
-    success = initRotaryEncoderTimer(TIM4, GPIOD, GPIO12, GPIO_AF2, GPIOB, GPIO7, GPIO_AF2);
+    success = initRotaryEncoderTimer(TIM4, GPIOD, GPIO13, GPIO_AF2, GPIOD, GPIO12, GPIO_AF2);
 
     for (;;) {
 	ezs_printf("TIM2: %8d TIM3: %8d TIM4: %8d\n", (int)timer_get_counter(TIM2), (int) timer_get_counter(TIM3), (int) timer_get_counter(TIM4));

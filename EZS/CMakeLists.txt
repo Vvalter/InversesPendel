@@ -12,24 +12,26 @@ INCLUDE(EZSconvenience)
 
 INCLUDE(ezs_ecos_stm32)
 
-include_directories(Inc)
-include_directories(Drivers/CMSIS/Include)
-include_directories(Drivers/CMSIS/Device/ST/STM32F4xx/Include)
-include_directories(Drivers/STM32F4xx_HAL_Driver/Inc)
-include_directories(Drivers/STM32F4xx_HAL_Driver/Legacy)
+# include_directories(Inc)
+# include_directories(Drivers/CMSIS/Include)
+# include_directories(Drivers/CMSIS/Device/ST/STM32F4xx/Include)
+# include_directories(Drivers/STM32F4xx_HAL_Driver/Inc)
+# include_directories(Drivers/STM32F4xx_HAL_Driver/Legacy)
+
 
 
 set(EZS_ARCH stm32f4)
 
 include_directories(${PROJECT_SOURCE_DIR}/libEZS/include)
 include_directories(${OPENCM3_PATH}/include)
+include_directories(${PROJECT_SOURCE_DIR}/include)
 
 add_definitions("-D EZS_DUMB_SERIAL")
 add_definitions("-D USE_HAL_DRIVER")
 add_definitions("-D STM32F411xE")
 
-AUX_SOURCE_DIRECTORY(Drivers/STM32F4xx_HAL_Driver/Src CMSIS_SOURCES)
-AUX_SOURCE_DIRECTORY(Src CMSIS_SOURCES)
+#AUX_SOURCE_DIRECTORY(Drivers/STM32F4xx_HAL_Driver/Src CMSIS_SOURCES)
+#UX_SOURCE_DIRECTORY(Src CMSIS_SOURCES)
 
 set(LIBEZS_SOURCES
 #	libEZS/src/ezs_tracer.cpp
@@ -45,6 +47,7 @@ ECOS_EZS_ADDLIB("${OPENCM3_PATH}/lib/libopencm3_stm32f4.a")
 
 SET(SRC_LIST
 	adc.c
+	src/lib.c
 	${LIBEZS_SOURCES}
 	${CMSIS_SOURCES}
 	)

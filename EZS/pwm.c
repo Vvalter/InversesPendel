@@ -58,7 +58,7 @@ the TIMx_CCER register. Refer to the TIMx_CCERx register description for more de
   -- set desired polarity in TIMx_CCER
   -- set CCxE bit in TIMx_CCER  (enable output)
 */
-static void pwm_init(uint32_t timer, uint8_t channel, uint32_t period) {
+void pwm_init(uint32_t timer, uint8_t channel, uint32_t period) {
 // function stolen from somewhere on stackoverflow
 
   // Convert channel number to internal rep
@@ -106,7 +106,7 @@ static void pwm_init(uint32_t timer, uint8_t channel, uint32_t period) {
     }
 }
 
-static void pwm_setup(void) {
+void pwm_setup(void) {
   rcc_periph_clock_enable(RCC_TIM4);
   //pwm_init(TIM4, 1, PWM_PERIOD);
   pwm_init(TIM4, 2, PWM_PERIOD);

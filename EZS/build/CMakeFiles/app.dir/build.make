@@ -90,10 +90,35 @@ CMakeFiles/app.dir/adc.c.o.provides: CMakeFiles/app.dir/adc.c.o.requires
 CMakeFiles/app.dir/adc.c.o.provides.build: CMakeFiles/app.dir/adc.c.o
 
 
+CMakeFiles/app.dir/src/lib.c.o: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/src/lib.c.o: ../src/lib.c
+CMakeFiles/app.dir/src/lib.c.o: ecos/install/lib/target.ld
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/app.dir/src/lib.c.o"
+	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc    $(C_FLAGS) $(C_INCLUDES) -o CMakeFiles/app.dir/src/lib.c.o -c /home/cip/2012/vy37bypi/InversesPendel/EZS/src/lib.c
+
+CMakeFiles/app.dir/src/lib.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/app.dir/src/lib.c.i"
+	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cip/2012/vy37bypi/InversesPendel/EZS/src/lib.c > CMakeFiles/app.dir/src/lib.c.i
+
+CMakeFiles/app.dir/src/lib.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/app.dir/src/lib.c.s"
+	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cip/2012/vy37bypi/InversesPendel/EZS/src/lib.c -o CMakeFiles/app.dir/src/lib.c.s
+
+CMakeFiles/app.dir/src/lib.c.o.requires:
+
+.PHONY : CMakeFiles/app.dir/src/lib.c.o.requires
+
+CMakeFiles/app.dir/src/lib.c.o.provides: CMakeFiles/app.dir/src/lib.c.o.requires
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/lib.c.o.provides.build
+.PHONY : CMakeFiles/app.dir/src/lib.c.o.provides
+
+CMakeFiles/app.dir/src/lib.c.o.provides.build: CMakeFiles/app.dir/src/lib.c.o
+
+
 CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_gpio.c.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_gpio.c.o: ../libEZS/drivers/stm32f4/ezs_gpio.c
 CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_gpio.c.o: ecos/install/lib/target.ld
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_gpio.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_gpio.c.o"
 	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc    $(C_FLAGS) $(C_INCLUDES) -o CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_gpio.c.o -c /home/cip/2012/vy37bypi/InversesPendel/EZS/libEZS/drivers/stm32f4/ezs_gpio.c
 
 CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_gpio.c.i: cmake_force
@@ -118,7 +143,7 @@ CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_gpio.c.o.provides.build: CMakeFile
 CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_dac.cpp.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_dac.cpp.o: ../libEZS/drivers/stm32f4/ezs_dac.cpp
 CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_dac.cpp.o: ecos/install/lib/target.ld
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_dac.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_dac.cpp.o"
 	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-g++  $(CXX_FLAGS) $(CXX_INCLUDES) -o CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_dac.cpp.o -c /home/cip/2012/vy37bypi/InversesPendel/EZS/libEZS/drivers/stm32f4/ezs_dac.cpp
 
 CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_dac.cpp.i: cmake_force
@@ -143,7 +168,7 @@ CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_dac.cpp.o.provides.build: CMakeFil
 CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_counter.cpp.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_counter.cpp.o: ../libEZS/drivers/stm32f4/ezs_counter.cpp
 CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_counter.cpp.o: ecos/install/lib/target.ld
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_counter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_counter.cpp.o"
 	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-g++  $(CXX_FLAGS) $(CXX_INCLUDES) -o CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_counter.cpp.o -c /home/cip/2012/vy37bypi/InversesPendel/EZS/libEZS/drivers/stm32f4/ezs_counter.cpp
 
 CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_counter.cpp.i: cmake_force
@@ -168,7 +193,7 @@ CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_counter.cpp.o.provides.build: CMak
 CMakeFiles/app.dir/libEZS/src/ezs_delay.c.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/libEZS/src/ezs_delay.c.o: ../libEZS/src/ezs_delay.c
 CMakeFiles/app.dir/libEZS/src/ezs_delay.c.o: ecos/install/lib/target.ld
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/app.dir/libEZS/src/ezs_delay.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/app.dir/libEZS/src/ezs_delay.c.o"
 	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc    $(C_FLAGS) $(C_INCLUDES) -o CMakeFiles/app.dir/libEZS/src/ezs_delay.c.o -c /home/cip/2012/vy37bypi/InversesPendel/EZS/libEZS/src/ezs_delay.c
 
 CMakeFiles/app.dir/libEZS/src/ezs_delay.c.i: cmake_force
@@ -190,484 +215,27 @@ CMakeFiles/app.dir/libEZS/src/ezs_delay.c.o.provides: CMakeFiles/app.dir/libEZS/
 CMakeFiles/app.dir/libEZS/src/ezs_delay.c.o.provides.build: CMakeFiles/app.dir/libEZS/src/ezs_delay.c.o
 
 
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.o: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.o: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.o: ecos/install/lib/target.ld
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.o"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc    $(C_FLAGS) $(C_INCLUDES) -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.o -c /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.i"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c > CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.i
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.s"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.s
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.o.requires:
-
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.o.requires
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.o.provides: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.o.requires
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.o.provides.build
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.o.provides
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.o.provides.build: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.o
-
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.o: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.o: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.o: ecos/install/lib/target.ld
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.o"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc    $(C_FLAGS) $(C_INCLUDES) -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.o -c /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.i"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c > CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.i
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.s"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.s
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.o.requires:
-
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.o.requires
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.o.provides: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.o.requires
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.o.provides.build
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.o.provides
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.o.provides.build: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.o
-
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.o: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.o: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.o: ecos/install/lib/target.ld
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.o"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc    $(C_FLAGS) $(C_INCLUDES) -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.o -c /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.i"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c > CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.i
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.s"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.s
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.o.requires:
-
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.o.requires
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.o.provides: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.o.requires
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.o.provides.build
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.o.provides
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.o.provides.build: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.o
-
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.o: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.o: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.o: ecos/install/lib/target.ld
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.o"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc    $(C_FLAGS) $(C_INCLUDES) -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.o -c /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.i"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c > CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.i
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.s"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.s
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.o.requires:
-
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.o.requires
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.o.provides: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.o.requires
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.o.provides.build
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.o.provides
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.o.provides.build: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.o
-
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.o: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.o: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.o: ecos/install/lib/target.ld
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.o"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc    $(C_FLAGS) $(C_INCLUDES) -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.o -c /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.i"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c > CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.i
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.s"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.s
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.o.requires:
-
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.o.requires
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.o.provides: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.o.requires
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.o.provides.build
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.o.provides
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.o.provides.build: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.o
-
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.o: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.o: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.o: ecos/install/lib/target.ld
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.o"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc    $(C_FLAGS) $(C_INCLUDES) -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.o -c /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.i"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c > CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.i
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.s"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.s
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.o.requires:
-
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.o.requires
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.o.provides: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.o.requires
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.o.provides.build
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.o.provides
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.o.provides.build: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.o
-
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.o: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.o: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.o: ecos/install/lib/target.ld
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.o"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc    $(C_FLAGS) $(C_INCLUDES) -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.o -c /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.i"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c > CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.i
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.s"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.s
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.o.requires:
-
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.o.requires
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.o.provides: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.o.requires
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.o.provides.build
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.o.provides
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.o.provides.build: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.o
-
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.o: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.o: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.o: ecos/install/lib/target.ld
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.o"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc    $(C_FLAGS) $(C_INCLUDES) -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.o -c /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.i"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c > CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.i
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.s"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.s
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.o.requires:
-
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.o.requires
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.o.provides: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.o.requires
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.o.provides.build
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.o.provides
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.o.provides.build: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.o
-
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.o: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.o: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.o: ecos/install/lib/target.ld
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.o"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc    $(C_FLAGS) $(C_INCLUDES) -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.o -c /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.i"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c > CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.i
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.s"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.s
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.o.requires:
-
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.o.requires
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.o.provides: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.o.requires
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.o.provides.build
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.o.provides
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.o.provides.build: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.o
-
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.o: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.o: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.o: ecos/install/lib/target.ld
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.o"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc    $(C_FLAGS) $(C_INCLUDES) -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.o -c /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.i"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c > CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.i
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.s"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.s
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.o.requires:
-
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.o.requires
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.o.provides: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.o.requires
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.o.provides.build
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.o.provides
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.o.provides.build: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.o
-
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.o: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.o: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.o: ecos/install/lib/target.ld
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.o"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc    $(C_FLAGS) $(C_INCLUDES) -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.o -c /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.i"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c > CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.i
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.s"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.s
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.o.requires:
-
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.o.requires
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.o.provides: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.o.requires
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.o.provides.build
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.o.provides
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.o.provides.build: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.o
-
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.o: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.o: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.o: ecos/install/lib/target.ld
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.o"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc    $(C_FLAGS) $(C_INCLUDES) -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.o -c /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.i"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c > CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.i
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.s"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.s
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.o.requires:
-
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.o.requires
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.o.provides: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.o.requires
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.o.provides.build
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.o.provides
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.o.provides.build: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.o
-
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.o: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.o: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.o: ecos/install/lib/target.ld
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.o"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc    $(C_FLAGS) $(C_INCLUDES) -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.o -c /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.i"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c > CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.i
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.s"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.s
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.o.requires:
-
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.o.requires
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.o.provides: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.o.requires
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.o.provides.build
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.o.provides
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.o.provides.build: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.o
-
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.o: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.o: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.o: ecos/install/lib/target.ld
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.o"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc    $(C_FLAGS) $(C_INCLUDES) -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.o -c /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.i"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c > CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.i
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.s"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cip/2012/vy37bypi/InversesPendel/EZS/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c -o CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.s
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.o.requires:
-
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.o.requires
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.o.provides: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.o.requires
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.o.provides.build
-.PHONY : CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.o.provides
-
-CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.o.provides.build: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.o
-
-
-CMakeFiles/app.dir/Src/stm32f4xx_hal_msp.c.o: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/Src/stm32f4xx_hal_msp.c.o: ../Src/stm32f4xx_hal_msp.c
-CMakeFiles/app.dir/Src/stm32f4xx_hal_msp.c.o: ecos/install/lib/target.ld
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/app.dir/Src/stm32f4xx_hal_msp.c.o"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc    $(C_FLAGS) $(C_INCLUDES) -o CMakeFiles/app.dir/Src/stm32f4xx_hal_msp.c.o -c /home/cip/2012/vy37bypi/InversesPendel/EZS/Src/stm32f4xx_hal_msp.c
-
-CMakeFiles/app.dir/Src/stm32f4xx_hal_msp.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/app.dir/Src/stm32f4xx_hal_msp.c.i"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cip/2012/vy37bypi/InversesPendel/EZS/Src/stm32f4xx_hal_msp.c > CMakeFiles/app.dir/Src/stm32f4xx_hal_msp.c.i
-
-CMakeFiles/app.dir/Src/stm32f4xx_hal_msp.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/app.dir/Src/stm32f4xx_hal_msp.c.s"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cip/2012/vy37bypi/InversesPendel/EZS/Src/stm32f4xx_hal_msp.c -o CMakeFiles/app.dir/Src/stm32f4xx_hal_msp.c.s
-
-CMakeFiles/app.dir/Src/stm32f4xx_hal_msp.c.o.requires:
-
-.PHONY : CMakeFiles/app.dir/Src/stm32f4xx_hal_msp.c.o.requires
-
-CMakeFiles/app.dir/Src/stm32f4xx_hal_msp.c.o.provides: CMakeFiles/app.dir/Src/stm32f4xx_hal_msp.c.o.requires
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Src/stm32f4xx_hal_msp.c.o.provides.build
-.PHONY : CMakeFiles/app.dir/Src/stm32f4xx_hal_msp.c.o.provides
-
-CMakeFiles/app.dir/Src/stm32f4xx_hal_msp.c.o.provides.build: CMakeFiles/app.dir/Src/stm32f4xx_hal_msp.c.o
-
-
-CMakeFiles/app.dir/Src/stm32f4xx_it.c.o: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/Src/stm32f4xx_it.c.o: ../Src/stm32f4xx_it.c
-CMakeFiles/app.dir/Src/stm32f4xx_it.c.o: ecos/install/lib/target.ld
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/app.dir/Src/stm32f4xx_it.c.o"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc    $(C_FLAGS) $(C_INCLUDES) -o CMakeFiles/app.dir/Src/stm32f4xx_it.c.o -c /home/cip/2012/vy37bypi/InversesPendel/EZS/Src/stm32f4xx_it.c
-
-CMakeFiles/app.dir/Src/stm32f4xx_it.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/app.dir/Src/stm32f4xx_it.c.i"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cip/2012/vy37bypi/InversesPendel/EZS/Src/stm32f4xx_it.c > CMakeFiles/app.dir/Src/stm32f4xx_it.c.i
-
-CMakeFiles/app.dir/Src/stm32f4xx_it.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/app.dir/Src/stm32f4xx_it.c.s"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cip/2012/vy37bypi/InversesPendel/EZS/Src/stm32f4xx_it.c -o CMakeFiles/app.dir/Src/stm32f4xx_it.c.s
-
-CMakeFiles/app.dir/Src/stm32f4xx_it.c.o.requires:
-
-.PHONY : CMakeFiles/app.dir/Src/stm32f4xx_it.c.o.requires
-
-CMakeFiles/app.dir/Src/stm32f4xx_it.c.o.provides: CMakeFiles/app.dir/Src/stm32f4xx_it.c.o.requires
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Src/stm32f4xx_it.c.o.provides.build
-.PHONY : CMakeFiles/app.dir/Src/stm32f4xx_it.c.o.provides
-
-CMakeFiles/app.dir/Src/stm32f4xx_it.c.o.provides.build: CMakeFiles/app.dir/Src/stm32f4xx_it.c.o
-
-
-CMakeFiles/app.dir/Src/system_stm32f4xx.c.o: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/Src/system_stm32f4xx.c.o: ../Src/system_stm32f4xx.c
-CMakeFiles/app.dir/Src/system_stm32f4xx.c.o: ecos/install/lib/target.ld
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/app.dir/Src/system_stm32f4xx.c.o"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc    $(C_FLAGS) $(C_INCLUDES) -o CMakeFiles/app.dir/Src/system_stm32f4xx.c.o -c /home/cip/2012/vy37bypi/InversesPendel/EZS/Src/system_stm32f4xx.c
-
-CMakeFiles/app.dir/Src/system_stm32f4xx.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/app.dir/Src/system_stm32f4xx.c.i"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cip/2012/vy37bypi/InversesPendel/EZS/Src/system_stm32f4xx.c > CMakeFiles/app.dir/Src/system_stm32f4xx.c.i
-
-CMakeFiles/app.dir/Src/system_stm32f4xx.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/app.dir/Src/system_stm32f4xx.c.s"
-	/proj/i4ezs/stm32//gcc-arm-none-eabi/bin/arm-none-eabi-gcc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cip/2012/vy37bypi/InversesPendel/EZS/Src/system_stm32f4xx.c -o CMakeFiles/app.dir/Src/system_stm32f4xx.c.s
-
-CMakeFiles/app.dir/Src/system_stm32f4xx.c.o.requires:
-
-.PHONY : CMakeFiles/app.dir/Src/system_stm32f4xx.c.o.requires
-
-CMakeFiles/app.dir/Src/system_stm32f4xx.c.o.provides: CMakeFiles/app.dir/Src/system_stm32f4xx.c.o.requires
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Src/system_stm32f4xx.c.o.provides.build
-.PHONY : CMakeFiles/app.dir/Src/system_stm32f4xx.c.o.provides
-
-CMakeFiles/app.dir/Src/system_stm32f4xx.c.o.provides.build: CMakeFiles/app.dir/Src/system_stm32f4xx.c.o
-
-
 # Object files for target app
 app_OBJECTS = \
 "CMakeFiles/app.dir/adc.c.o" \
+"CMakeFiles/app.dir/src/lib.c.o" \
 "CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_gpio.c.o" \
 "CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_dac.cpp.o" \
 "CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_counter.cpp.o" \
-"CMakeFiles/app.dir/libEZS/src/ezs_delay.c.o" \
-"CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.o" \
-"CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.o" \
-"CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.o" \
-"CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.o" \
-"CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.o" \
-"CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.o" \
-"CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.o" \
-"CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.o" \
-"CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.o" \
-"CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.o" \
-"CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.o" \
-"CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.o" \
-"CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.o" \
-"CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.o" \
-"CMakeFiles/app.dir/Src/stm32f4xx_hal_msp.c.o" \
-"CMakeFiles/app.dir/Src/stm32f4xx_it.c.o" \
-"CMakeFiles/app.dir/Src/system_stm32f4xx.c.o"
+"CMakeFiles/app.dir/libEZS/src/ezs_delay.c.o"
 
 # External object files for target app
 app_EXTERNAL_OBJECTS =
 
 app.elf: CMakeFiles/app.dir/adc.c.o
+app.elf: CMakeFiles/app.dir/src/lib.c.o
 app.elf: CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_gpio.c.o
 app.elf: CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_dac.cpp.o
 app.elf: CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_counter.cpp.o
 app.elf: CMakeFiles/app.dir/libEZS/src/ezs_delay.c.o
-app.elf: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.o
-app.elf: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.o
-app.elf: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.o
-app.elf: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.o
-app.elf: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.o
-app.elf: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.o
-app.elf: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.o
-app.elf: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.o
-app.elf: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.o
-app.elf: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.o
-app.elf: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.o
-app.elf: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.o
-app.elf: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.o
-app.elf: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.o
-app.elf: CMakeFiles/app.dir/Src/stm32f4xx_hal_msp.c.o
-app.elf: CMakeFiles/app.dir/Src/stm32f4xx_it.c.o
-app.elf: CMakeFiles/app.dir/Src/system_stm32f4xx.c.o
 app.elf: CMakeFiles/app.dir/build.make
 app.elf: CMakeFiles/app.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX executable app.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cip/2012/vy37bypi/InversesPendel/EZS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable app.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/app.dir/link.txt --verbose=$(VERBOSE)
 	arm-none-eabi-objcopy -O binary /home/cip/2012/vy37bypi/InversesPendel/EZS/build/app.elf /home/cip/2012/vy37bypi/InversesPendel/EZS/build/app.bin
 	arm-none-eabi-objcopy -O srec /home/cip/2012/vy37bypi/InversesPendel/EZS/build/app.elf /home/cip/2012/vy37bypi/InversesPendel/EZS/build/app.srec
@@ -678,27 +246,11 @@ CMakeFiles/app.dir/build: app.elf
 .PHONY : CMakeFiles/app.dir/build
 
 CMakeFiles/app.dir/requires: CMakeFiles/app.dir/adc.c.o.requires
+CMakeFiles/app.dir/requires: CMakeFiles/app.dir/src/lib.c.o.requires
 CMakeFiles/app.dir/requires: CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_gpio.c.o.requires
 CMakeFiles/app.dir/requires: CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_dac.cpp.o.requires
 CMakeFiles/app.dir/requires: CMakeFiles/app.dir/libEZS/drivers/stm32f4/ezs_counter.cpp.o.requires
 CMakeFiles/app.dir/requires: CMakeFiles/app.dir/libEZS/src/ezs_delay.c.o.requires
-CMakeFiles/app.dir/requires: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.o.requires
-CMakeFiles/app.dir/requires: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.o.requires
-CMakeFiles/app.dir/requires: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.o.requires
-CMakeFiles/app.dir/requires: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.o.requires
-CMakeFiles/app.dir/requires: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.o.requires
-CMakeFiles/app.dir/requires: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.o.requires
-CMakeFiles/app.dir/requires: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.o.requires
-CMakeFiles/app.dir/requires: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.o.requires
-CMakeFiles/app.dir/requires: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.o.requires
-CMakeFiles/app.dir/requires: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.o.requires
-CMakeFiles/app.dir/requires: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.o.requires
-CMakeFiles/app.dir/requires: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.o.requires
-CMakeFiles/app.dir/requires: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.o.requires
-CMakeFiles/app.dir/requires: CMakeFiles/app.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.o.requires
-CMakeFiles/app.dir/requires: CMakeFiles/app.dir/Src/stm32f4xx_hal_msp.c.o.requires
-CMakeFiles/app.dir/requires: CMakeFiles/app.dir/Src/stm32f4xx_it.c.o.requires
-CMakeFiles/app.dir/requires: CMakeFiles/app.dir/Src/system_stm32f4xx.c.o.requires
 
 .PHONY : CMakeFiles/app.dir/requires
 
