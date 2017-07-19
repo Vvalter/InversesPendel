@@ -110,12 +110,32 @@ void pwm_setup(void) {
 
 void polling_thread(cyg_addrword_t arg)
 {
+	const uint32_t pulses_per_rotation = 2400;
+	// Timer ticks 42*1e6 times per second
+	// Input ist rotations per minute
+	const uint32_t rots_per_minute = 60;
+	// One Minute is 42*1e6*60 timer ticks (~2,5*1e9)
+	const uint32_t ticks_per_minute = 42*60*((uint32_t)1000000);
+	// Ticks between two pulses is 
+	const uint32_t goal_period = ticks_per_minute / (rots_per_minute * pulses_per_rotation);
 
         int success;
         success = initRotaryEncoderTimer(TIM2, GPIOA, GPIO5, GPIO_AF1, GPIOA, GPIO1, GPIO_AF1);
+	if (success) {
+		ezs_printf("error1: %d\n", success);
+		return;
+	}
         success = initRotaryEncoderTimer(TIM3, GPIOC, GPIO6, GPIO_AF2, GPIOC, GPIO7, GPIO_AF2);
+	if (success) {
+		ezs_printf("error2: %d\n", success);
+		return;
+	}
         //success = initRotaryEncoderTimer(TIM4, GPIOD, GPIO13, GPIO_AF2, GPIOD, GPIO12, GPIO_AF2);
         success = initTimer(TIM5);
+	if (success) {
+		ezs_printf("error3: %d\n", success);
+		return;
+	}
 
         initPinOutput(GPIOC, GPIO0);
         setPinHigh(GPIOC, GPIO0);
@@ -125,36 +145,46 @@ void polling_thread(cyg_addrword_t arg)
 	timer_set_oc_value(TIM4, TIM_OC2, PWM_PERIOD);
 	timer_set_oc_value(TIM4, TIM_OC3, PWM_PERIOD * 0.75);
 
-        unsigned int last_time = 0;
-        int last_angle = 0;
+        uint32_t last_time = 0;
+	int32_t last_angle_time = 0;
+        int32_t last_angle = 0;
         double duty = 0.0;
 
-        int cnt = 0;
         for (;;) {
-                unsigned int current_time = timer_get_counter(TIM5);
-                int current_angle = timer_get_counter(TIM2);
-
+                uint32_t current_time = timer_get_counter(TIM5);
+                int32_t current_angle = timer_get_counter(TIM2);
+		
+		// Overflow -> ignore (will happen around every 2 minutes)
                 if (current_time < last_time) {
                         last_time = current_time;
                         last_angle = current_angle;
-                        //continue;
-                }
-
-                if (current_time == last_time) {
                         continue;
                 }
 
-                if (cnt >= 10) {
-                        int drehgeber = timer_get_counter(TIM3);
-                        drehgeber = ((drehgeber + 2400)) % 2400;
-                        duty = drehgeber / 2400.0;
-                        timer_set_oc_value(TIM4, TIM_OC3, PWM_PERIOD * duty);
-                        cnt = 0;
+		// Nothing happened
+                if (current_time == last_time || current_angle == last_angle) {
+                        continue;
                 }
-                cnt ++;
+
+		// Control speed with rotary encoder 
+		int32_t drehgeber = timer_get_counter(TIM3);
+		drehgeber = ((drehgeber + 2400)) % 2400;
+		duty = drehgeber / 2400.0;
+		timer_set_oc_value(TIM4, TIM_OC3, PWM_PERIOD * duty);
 
 
-                //double current_drehzahl = 
+		if (current_angle > last_angle) {
+			int32_t dAngle = current_angle - last_angle;
+			uint32_t dTime = last_angle_time - current_time;
+
+			// TODO check for overflow depending on goal_period
+			uint32_t shouldTime = dAngle * goal_period;
+
+			int32_t error = dTime - shouldTime;
+
+			last_angle_time = current_time;
+			last_angle = current_angle;
+		}
 
 
                 last_time = current_time;

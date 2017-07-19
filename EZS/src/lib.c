@@ -24,7 +24,7 @@ int initRotaryEncoderTimer(uint32_t tim, uint32_t portA, uint16_t pinA, uint8_t 
 	case GPIOB: rccB = RCC_GPIOB; break;
 	case GPIOC: rccB = RCC_GPIOC; break;
 	case GPIOD: rccB = RCC_GPIOD; break;
-	default: return 2;
+	default: return 3;
     }
 
     gpio_mode_setup(portA, GPIO_MODE_AF, GPIO_PUPD_PULLUP, pinA);
