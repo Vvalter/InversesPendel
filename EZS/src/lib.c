@@ -74,3 +74,38 @@ int initRotaryEncoderTimer(uint32_t tim, uint32_t portA, uint16_t pinA, uint8_t 
 
     return 0;
 }
+
+int initTimer(uint32_t tim) {
+        enum rcc_periph_clken rccTim;
+        switch (tim) {
+                case TIM2: rccTim = RCC_TIM2; break;
+                case TIM3: rccTim = RCC_TIM3; break;
+                case TIM4: rccTim = RCC_TIM4; break;
+                case TIM5: rccTim = RCC_TIM5; break;
+                default: return 1;
+        }
+
+        rcc_periph_clock_enable(rccTim);
+
+	timer_set_mode(tim, TIM_CR1_CKD_CK_INT, TIM_CR1_CMS_EDGE, TIM_CR1_DIR_UP);
+
+	timer_continuous_mode(tim);
+	timer_set_period(tim, 0xFFFFFFFF);
+	timer_set_prescaler(tim, 0);
+	timer_enable_preload(tim);
+
+	timer_enable_counter(tim);
+
+        return 0;
+}
+
+void initPinOutput(uint32_t port, uint16_t pin) {
+    gpio_mode_setup(port, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE, pin);
+}
+
+void setPinHigh(uint32_t port, uint16_t pin) {
+    gpio_set(port, pin);
+}
+void setPinLow(uint32_t port, uint16_t pin) {
+    gpio_clear(port, pin);
+}

@@ -46,7 +46,7 @@ set(LIBEZS_SOURCES
 ECOS_EZS_ADDLIB("${OPENCM3_PATH}/lib/libopencm3_stm32f4.a")
 
 SET(SRC_LIST
-	adc.c
+	motor_control.c
 	src/lib.c
 	${LIBEZS_SOURCES}
 	${CMSIS_SOURCES}
