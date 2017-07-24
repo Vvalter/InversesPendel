@@ -26,7 +26,7 @@ static cyg_handle_t polling_handle;
 
 /*
  * TIM5 gives time
- * TIM2 gives rotary encoder on ping A5 and A1
+ * TIM2 gives rotary encoder on pin A5 and A1
  * TIM3 rotary input C6 C7
  * enable pin PC0 
  * PWM: PD13, PD14, PD15 with TIM4
@@ -36,7 +36,7 @@ static cyg_handle_t polling_handle;
 
 /// The timer ticks per microsecond.  Can be adjusting by measuring
 /// pwm on o-scope
-#define PWM_TIMER_TICKS_PER_MICROSECOND 84.0
+#define PWM_TIMER_TICKS_PER_MICROSECOND 42.0
 
 /// PWM Frequency, default is 62 kHz
 // 162 corresponds to 80kHz (80.78kHz)
@@ -44,7 +44,7 @@ static cyg_handle_t polling_handle;
 
 /// PWM Period, set automatically by the options above
 #define PWM_PERIOD ((1.0/PWM_FREQUENCY_kHz) * 1000.0 \
-                    * PWM_TIMER_TICKS_PER_MICROSECOND / 2)
+                    * PWM_TIMER_TICKS_PER_MICROSECOND)
 
 
 void pwm_init(uint32_t timer, uint8_t channel, uint32_t period) {

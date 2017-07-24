@@ -38,7 +38,7 @@ set(LIBEZS_SOURCES
 #	libEZS/src/ezs_impure_ptr.c
 	libEZS/drivers/${EZS_ARCH}/ezs_gpio.c
 	libEZS/drivers/${EZS_ARCH}/ezs_dac.cpp
-#	libEZS/drivers/${EZS_ARCH}/ezs_serial.cpp
+	libEZS/drivers/${EZS_ARCH}/ezs_serial.cpp
 	libEZS/drivers/${EZS_ARCH}/ezs_counter.cpp
 	libEZS/src/ezs_delay.c
 	)
@@ -46,7 +46,7 @@ set(LIBEZS_SOURCES
 ECOS_EZS_ADDLIB("${OPENCM3_PATH}/lib/libopencm3_stm32f4.a")
 
 SET(SRC_LIST
-	motor_control.c
+	lib_test.c
 	src/lib.c
 	${LIBEZS_SOURCES}
 	${CMSIS_SOURCES}
