@@ -9,6 +9,8 @@
 #include <libopencm3/stm32/f4/gpio.h>
 #include <libopencm3/stm32/timer.h>
 
+#include <stdlib.h>
+
 #include "ezs_io.h"
 #include "lib.h"
 
@@ -19,6 +21,8 @@
 static cyg_uint8    polling_stack[STACKSIZE];
 static cyg_thread   polling_data;
 static cyg_handle_t polling_handle;
+
+//static uint32_t data[25000];
 
 /*
  * TIM5 gives time
@@ -110,14 +114,16 @@ void pwm_setup(void) {
 
 void polling_thread(cyg_addrword_t arg)
 {
-	const uint32_t pulses_per_rotation = 2400;
+	const uint32_t pulses_per_rotation = 1560;
 	// Timer ticks 42*1e6 times per second
 	// Input ist rotations per minute
-	const uint32_t rots_per_minute = 60;
+	const uint32_t rots_soll_pminute = 180;
 	// One Minute is 42*1e6*60 timer ticks (~2,5*1e9)
 	const uint32_t ticks_per_minute = 42*60*((uint32_t)1000000);
 	// Ticks between two pulses is 
-	const uint32_t goal_period = ticks_per_minute / (rots_per_minute * pulses_per_rotation);
+	const uint32_t soll_period = ticks_per_minute / (rots_soll_pminute * pulses_per_rotation);
+
+        const double soll_drehzahl = rots_soll_pminute / 60.0;
 
         int success;
         success = initRotaryEncoderTimer(TIM2, GPIOA, GPIO5, GPIO_AF1, GPIOA, GPIO1, GPIO_AF1);
@@ -146,11 +152,32 @@ void polling_thread(cyg_addrword_t arg)
 	timer_set_oc_value(TIM4, TIM_OC3, PWM_PERIOD * 0.75);
 
         uint32_t last_time = 0;
-	int32_t last_angle_time = 0;
         int32_t last_angle = 0;
         double duty = 0.0;
 
-        for (;;) {
+        uint32_t tMeasureStart = 0;
+        int32_t sumPulses = 0;
+
+        const int32_t MAX_PULSE_PER_MEASUREMENT = 4;
+
+
+        int stage = 0;
+        int messung = 0;
+
+        bool firstMeasurement = true;
+
+        const double MAX_ERROR_SUM = 500;
+        double error_sum = 0.0;
+
+	const int Kp = 1;
+        const int Ki = 10;
+
+        int cnt = 0;
+
+        timer_set_oc_value(TIM4, TIM_OC3, PWM_PERIOD * 0.5);
+
+	int i = 0;
+        for (; ;) {
                 uint32_t current_time = timer_get_counter(TIM5);
                 int32_t current_angle = timer_get_counter(TIM2);
 		
@@ -166,32 +193,104 @@ void polling_thread(cyg_addrword_t arg)
                         continue;
                 }
 
+                /*
+                uint32_t dAngle2 = abs(current_angle - last_angle);
+                if (dAngle2 > 1) {
+                        data[i++] = -1;
+                } else if (dAngle2 == 1) {
+                        data[i++] = current_time;
+                }
+                */
+
+                /*
+                if (messung >= 110) {
+                        messung = 0;
+                        cnt = 0;
+                        stage ++;
+                        duty = 0.05 * stage;
+                        if (stage > 20) {
+                                ezs_printf("done\n");
+                                return;
+                        }
+                }
+                */
+
 		// Control speed with rotary encoder 
+                //
+                /*
 		int32_t drehgeber = timer_get_counter(TIM3);
 		drehgeber = ((drehgeber + 2400)) % 2400;
 		duty = drehgeber / 2400.0;
-		timer_set_oc_value(TIM4, TIM_OC3, PWM_PERIOD * duty);
+                duty = 0.05;
+                */
+		//timer_set_oc_value(TIM4, TIM_OC3, PWM_PERIOD * duty);
 
 
-		if (current_angle > last_angle) {
-			int32_t dAngle = current_angle - last_angle;
-			uint32_t dTime = last_angle_time - current_time;
+                int32_t dAngle = current_angle - last_angle;
+                if (firstMeasurement) {
+                        firstMeasurement = false;
+                        //tMeasureStart = current_time;
+                }
+                sumPulses += dAngle;
 
-			// TODO check for overflow depending on goal_period
-			uint32_t shouldTime = dAngle * goal_period;
+                if (current_time > tMeasureStart && abs(sumPulses) >= MAX_PULSE_PER_MEASUREMENT) {
+                        uint32_t dTime = current_time - tMeasureStart;
+                        double ist_drehzahl = ((double)abs(sumPulses) * (42*1e6)) / ((double)dTime * 1560.0);
 
-			int32_t error = dTime - shouldTime;
+                        double error = soll_drehzahl - ist_drehzahl;
+                        error_sum += error;
 
-			last_angle_time = current_time;
-			last_angle = current_angle;
-		}
+                        if (error_sum > MAX_ERROR_SUM) error_sum = MAX_ERROR_SUM;
+                        if (error_sum < -MAX_ERROR_SUM) error_sum = -MAX_ERROR_SUM;
 
 
-                last_time = current_time;
+                        double res = Kp * error + Ki * error_sum;
+
+                        uint32_t new_duty;
+                        if (res < 0) {
+                                new_duty = PWM_PERIOD;
+                        } else if (res > PWM_PERIOD) {
+                                new_duty = PWM_PERIOD;
+                        } else {
+                                new_duty = res;
+                        }
+
+                        new_duty = PWM_PERIOD - new_duty;
+
+                        //new_duty = 575;
+                        if (new_duty > 0.9 * PWM_PERIOD) new_duty = 0.9 *PWM_PERIOD;
+                        timer_set_oc_value(TIM4, TIM_OC3, new_duty);
+
+                        if (cnt++ > 50) {
+                                ezs_printf("soll_drehzahl: %10.10f | ist_drehzahl: %10.10f | error: %10.10f | res: %10.10f | new_duty: %d | dTime %u | sumPulses: %d\n", 
+                                        soll_drehzahl, ist_drehzahl, error, res, (int)new_duty, (unsigned int) dTime, (int)sumPulses);
+                                cnt = 0;
+                        }
+
+                        /*
+                        if (cnt++ >= 5) {
+                                if (messung++ >= 10) {
+                                        ezs_printf("%f %f\n", duty, drehzahl);
+                                }
+                                cnt = 0;
+                        }
+                        */
+                        firstMeasurement = true;
+                        tMeasureStart = current_time;
+                        sumPulses = 0;
+                }
+
+                //last_time = current_time;
                 last_angle = current_angle;
-                ezs_printf("Time: %10u | Angle: %10d | duty %3.3f | TIM3: %10d \n", (unsigned int)(timer_get_counter(TIM5)/(42*1e6)), (int) timer_get_counter(TIM2), duty, (int) timer_get_counter(TIM3));
+                //ezs_printf("Time: %10u | Angle: %10d | duty %3.3f | TIM3: %10d \n", (unsigned int)(timer_get_counter(TIM5)/(42*1e6)), (int) timer_get_counter(TIM2), duty, (int) timer_get_counter(TIM3));
                 //ezs_printf("TIM2: %10d TIM3: %10d TIM4: %10d TIM5: %10u\n", (int)timer_get_counter(TIM2), (int) timer_get_counter(TIM3), (int) timer_get_counter(TIM5), (unsigned int) (timer_get_counter(TIM5) / (42*1e6)));
         }
+        /*
+        timer_set_oc_value(TIM4, TIM_OC3, PWM_PERIOD);
+        for (i = 0; i < 25000; i++) {
+                ezs_printf("%d\n", (int)data[i]);
+        }
+        */
 }
 
 void cyg_user_start(void)
