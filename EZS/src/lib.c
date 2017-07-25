@@ -32,9 +32,6 @@ int initRotaryEncoderTimer(uint32_t tim, uint32_t portA, uint16_t pinA, uint8_t 
 
     timer_set_mode(tim, TIM_CR1_CKD_CK_INT, //For dead time and filter sampling, not important for now.
 	    TIM_CR1_CMS_EDGE,	//TIM_CR1_CMS_EDGE
-	    //TIM_CR1_CMS_CENTER_1
-	    //TIM_CR1_CMS_CENTER_2
-	    //TIM_CR1_CMS_CENTER_3 la frequencia del pwm se divide a la mitad.
 	    TIM_CR1_DIR_UP);
 
     timer_set_prescaler(tim, 0);
@@ -86,6 +83,14 @@ void setPinHigh(uint32_t port, uint16_t pin) {
 }
 void setPinLow(uint32_t port, uint16_t pin) {
     gpio_clear(port, pin);
+}
+
+void initPinInput(uint32_t port, uint16_t pin, uint8_t pull) {
+    gpio_mode_setup(port, GPIO_MODE_INPUT, pull, pin);
+}
+
+bool readPin(uint32_t port, uint16_t pin) {
+    return gpio_get(port, pin);
 }
 
 /*
@@ -164,4 +169,55 @@ uint16_t readADCBlocking()
         while (!adc_eoc(ADC1));
         uint16_t reg16 = adc_read_regular(ADC1);
         return reg16;
+}
+
+void pwm_init(uint32_t timer, uint8_t channel, uint32_t period, uint32_t port, uint16_t pin, uint16_t af) {
+// function stolen from somewhere on stackoverflow
+
+  // Convert channel number to internal rep
+  enum tim_oc_id chan;
+  switch (channel) {
+    case 1:   chan = TIM_OC1; break;
+    case 2:   chan = TIM_OC2; break;
+    case 3:   chan = TIM_OC3; break;
+    case 4:   chan = TIM_OC4; break;
+    default:  chan = TIM_OC4; break;
+  }
+
+  // Timer Base Configuration
+  // timer_reset(timer);
+  timer_set_mode(timer, TIM_CR1_CKD_CK_INT, // clock division
+                        TIM_CR1_CMS_EDGE,   // Center-aligned mode selection
+                        TIM_CR1_DIR_UP);    // TIMx_CR1 DIR: Direction
+  timer_continuous_mode(timer);             // Disables TIM_CR1_OPM (One pulse mode)
+  timer_set_period(timer, period);                    // Sets TIMx_ARR
+  timer_set_prescaler(timer, 1);               // Adjusts speed of timer
+  timer_set_clock_division(timer, 0);            // Adjusts speed of timer
+  timer_set_master_mode(timer, TIM_CR2_MMS_UPDATE);   // Master Mode Selection
+  timer_enable_preload(timer);                        // Set ARPE bit in TIMx_CR1
+
+  // Channel-specific settings
+  timer_set_oc_value(timer, chan, 0);             // sets TIMx_CCRx
+   //In PWM mode 1 channel is active as long as TIMx_CNT<TIMx_CCR1, else inactive
+  timer_set_oc_mode(timer, chan, TIM_OCM_PWM1);   // Sets PWM Mode 1
+  timer_enable_oc_preload(timer, chan);           // Sets OCxPE in TIMx_CCMRx
+  timer_set_oc_polarity_high(timer, chan);        // set desired polarity in TIMx_CCER
+  timer_enable_oc_output(timer, chan);             // set CCxE bit in TIMx_CCER  (enable output)
+
+  // Initialize all counters in the register
+  switch (timer) {
+    case TIM1:  TIM1_EGR |= TIM_EGR_UG; break;
+    case TIM2:  TIM2_EGR |= TIM_EGR_UG; break;
+    case TIM3:  TIM3_EGR |= TIM_EGR_UG; break;
+    case TIM4:  TIM4_EGR |= TIM_EGR_UG; break;
+    case TIM5:  TIM5_EGR |= TIM_EGR_UG; break;
+    case TIM6:  TIM6_EGR |= TIM_EGR_UG; break;
+    case TIM7:  TIM7_EGR |= TIM_EGR_UG; break;
+    case TIM8:  TIM8_EGR |= TIM_EGR_UG; break;
+    }
+
+  gpio_mode_setup(port, GPIO_MODE_AF, GPIO_PUPD_NONE, pin);
+  // AF2 = TIM4_CH1..4
+  gpio_set_af(port, af, pin);
+  timer_enable_counter(timer);
 }

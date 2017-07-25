@@ -257,7 +257,7 @@ void polling_thread(cyg_addrword_t arg)
 
                         new_duty = PWM_PERIOD - new_duty;
 
-                        //new_duty = 575;
+                        new_duty = 575;
                         if (new_duty > 0.9 * PWM_PERIOD) new_duty = 0.9 *PWM_PERIOD;
                         timer_set_oc_value(TIM4, TIM_OC3, new_duty);
 
