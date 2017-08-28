@@ -45,34 +45,6 @@ static const char *stateToString(enum state st) {
 }
 
 
-/*
- * TIM2 is position of waggon (32bit)
- *      pins
- *              A1 GREEN
- *              A5 WHITE
- *      39393
- *      39253
- *      39260
- * TIM3 is position of pendulum (16bit)
- *      pins
- *              C6 WHITE
- *              C7 GREEN
- *
- * TIM4 is pwm
- *      Channel 1 is IN 1
- *              pins B6
- *      Channel 2 is IN 2
- *              pins B7
- *
- * EN A15
- *
- * TIM5 is time (32bit)
- *
- * Taster links D1
- * Taster rechts D2
- *
- * ADC B0
- */
 
 static bool motorOn = false;
 
@@ -279,9 +251,9 @@ void polling_thread(cyg_addrword_t arg)
                                                                  // Bremsen
                                                                  breakMotor();
                                                                  if (time - lastPositionWaggonTime > 5 * TIMER_TICKS_PER_MICROSECOND * 1000) {
-                                                                         wackelStart = time;
-                                                                         currentState = WACKEL_RECHTS;
-                                                                         wackelAnzahl ++;
+                                 wackelStart = time;
+                                 currentState = WACKEL_RECHTS;
+                                 wackelAnzahl ++;
                                                                  }
                                                          }
                                                          break;
@@ -292,36 +264,36 @@ void polling_thread(cyg_addrword_t arg)
                                                          } else {
                                                                  // Bremsen
                                                                  breakMotor();
-                                                                 if (time - lastPositionWaggonTime > 5 * TIMER_TICKS_PER_MICROSECOND * 1000) {
-                                                                         wackelMaxTicks += wackelMaxIncrement;
-                                                                         if (wackelMaxTicks > wackelMaxTicksMax) {
-                                                                                 wackelMaxTicks = wackelMaxTicksMax;
-                                                                         }
-                                                                         wackelStart = time;
-                                                                         currentState = WACKEL_LINKS;
-                                                                 }
+         if (time - lastPositionWaggonTime > 5 * TIMER_TICKS_PER_MICROSECOND * 1000) {
+                 wackelMaxTicks += wackelMaxIncrement;
+                 if (wackelMaxTicks > wackelMaxTicksMax) {
+                         wackelMaxTicks = wackelMaxTicksMax;
+                 }
+                 wackelStart = time;
+                 currentState = WACKEL_LINKS;
+         }
                                                          }
 
                                                          break;
                                                  case AUFSCHWINGEN_WARTEN: 
                                                          breakMotor();
-                                                         if (abs(positionPendulum) < 300) {
-                                                                 impulsStart = time;
-                                                                 impulsDirection = positionPendulum / abs(positionPendulum);
-                                                                 currentState = AUFSCHWINGEN_IMPULS;
-                                                         }
+         if (abs(positionPendulum) < 300) {
+                 impulsStart = time;
+                 impulsDirection = positionPendulum / abs(positionPendulum);
+                 currentState = AUFSCHWINGEN_IMPULS;
+         }
                                                          break;
                                                  case AUFSCHWINGEN_IMPULS:
-                                                         if (time - impulsStart > IMPULS_LENGTH) {
-                                                                 currentState = AUFSCHWINGEN_WARTEN;
-                                                         } else {
-                                                                 if (impulsDirection >= 0) {
-                                                                         driveLeftFast();
-                                                                 } else {
-                                                                         driveRightFast();
-                                                                 }
-                                                         }
-                                                         break;
+                         if (time - impulsStart > IMPULS_LENGTH) {
+                                 currentState = AUFSCHWINGEN_WARTEN;
+                         } else {
+                                 if (impulsDirection >= 0) {
+                                         driveLeftFast();
+                                 } else {
+                                         driveRightFast();
+                                 }
+                         }
+                         break;
                                                  default: break;
                                          }
                                          break;

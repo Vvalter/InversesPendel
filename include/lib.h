@@ -44,6 +44,19 @@ void initADC(uint32_t port, uint16_t pin);
 uint16_t readADCBlocking(void);
 
 void pwm_init(uint32_t timer, uint8_t channel, uint32_t period, uint32_t port, uint16_t pin, uint16_t af);
+
+void stopMotor(void);
+void startMotor(void);
+void breakMotor(void);
+
+void driveLeft(float speed);
+void driveLeftFast(void);
+
+void driveRight(float speed);
+void driveRightFast(void);
+
+void initHardware(void);
+
 #ifdef __cplusplus
 }
 #endif

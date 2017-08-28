@@ -47,7 +47,9 @@ ECOS_EZS_ADDLIB("${OPENCM3_PATH}/lib/libopencm3_stm32f4.a")
 
 SET(SRC_LIST
         ../src/main.c
+        ../src/state_machine.c
 	../src/lib.c
+	../src/aufschwingen.c
 	${LIBEZS_SOURCES}
 	${CMSIS_SOURCES}
 	)

@@ -221,3 +221,88 @@ void pwm_init(uint32_t timer, uint8_t channel, uint32_t period, uint32_t port, u
   gpio_set_af(port, af, pin);
   timer_enable_counter(timer);
 }
+
+void stopMotor(void) {
+        setPinLow(GPIOA, GPIO15);
+}
+
+void startMotor(void) {
+        setPinHigh(GPIOA, GPIO15);
+}
+
+void driveLeft(float speed) {
+        timer_set_oc_value(TIM4, TIM_OC1, PWM_PERIOD*speed);
+        timer_set_oc_value(TIM4, TIM_OC2, PWM_PERIOD);
+}
+void driveLeftFast(void) {
+        timer_set_oc_value(TIM4, TIM_OC1, 0);
+        timer_set_oc_value(TIM4, TIM_OC2, PWM_PERIOD);
+}
+
+void breakMotor(void) {
+        timer_set_oc_value(TIM4, TIM_OC1, PWM_PERIOD);
+        timer_set_oc_value(TIM4, TIM_OC2, PWM_PERIOD);
+}
+
+void driveRight(float speed) {
+        timer_set_oc_value(TIM4, TIM_OC1, PWM_PERIOD);
+        timer_set_oc_value(TIM4, TIM_OC2, PWM_PERIOD*speed);
+}
+void driveRightFast(void) {
+        timer_set_oc_value(TIM4, TIM_OC1, PWM_PERIOD);
+        timer_set_oc_value(TIM4, TIM_OC2, 0);
+}
+
+void initHardware(void) {
+        /**
+         * Initialize hardware components
+         * TIM2 is position of waggon (32bit)
+         *      pins
+         *              A1 GREEN
+         *              A5 WHITE
+         *      39393
+         *      39253
+         *      39260
+         * TIM3 is position of pendulum (16bit)
+         *      pins
+         *              C6 WHITE
+         *              C7 GREEN
+         *
+         * TIM4 is pwm
+         *      Channel 1 is IN 1
+         *              pins B6
+         *      Channel 2 is IN 2
+         *              pins B7
+         *
+         * EN A15
+         *
+         * TIM5 is time (32bit)
+         *
+         * Taster links D1
+         * Taster rechts D2
+         *
+         * ADC B0
+         */
+        initRCC();
+        // Position Waggon
+        initRotaryEncoderTimer(TIM2, GPIOA, GPIO5, GPIO_AF1, GPIOA, GPIO1, GPIO_AF1);
+        // Position Pendulum
+        initRotaryEncoderTimer(TIM3, GPIOC, GPIO6, GPIO_AF2, GPIOC, GPIO7, GPIO_AF2);
+        // IN1
+        pwm_init(TIM4, 1, PWM_PERIOD, GPIOB, GPIO6, GPIO_AF2);
+        // IN2
+        pwm_init(TIM4, 2, PWM_PERIOD, GPIOB, GPIO7, GPIO_AF2);
+        // Time
+        initTimer(TIM5);
+        // EN
+        initPinOutput(GPIOA, GPIO15);
+        // Motor
+        startMotor();
+        // Taster links
+        initPinInput(GPIOD, GPIO1, GPIO_PUPD_PULLUP);
+        // Taster rechts
+        initPinInput(GPIOD, GPIO2, GPIO_PUPD_PULLUP);
+        // ADC
+        initADC(GPIOB, GPIO0);
+}
+
