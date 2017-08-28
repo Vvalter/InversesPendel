@@ -1,0 +1,15 @@
+/home/vvalter/InversesPendel/EZS/build/CMakeFiles/edit_cache.dir
+/home/vvalter/InversesPendel/EZS/build/CMakeFiles/rebuild_cache.dir
+/home/vvalter/InversesPendel/EZS/build/CMakeFiles/listing.dir
+/home/vvalter/InversesPendel/EZS/build/CMakeFiles/normalclean.dir
+/home/vvalter/InversesPendel/EZS/build/CMakeFiles/ecosclean.dir
+/home/vvalter/InversesPendel/EZS/build/CMakeFiles/trace.dir
+/home/vvalter/InversesPendel/EZS/build/CMakeFiles/unbrick.dir
+/home/vvalter/InversesPendel/EZS/build/CMakeFiles/aiT.dir
+/home/vvalter/InversesPendel/EZS/build/CMakeFiles/app.dir
+/home/vvalter/InversesPendel/EZS/build/CMakeFiles/gdb.dir
+/home/vvalter/InversesPendel/EZS/build/CMakeFiles/debug.dir
+/home/vvalter/InversesPendel/EZS/build/CMakeFiles/doc.dir
+/home/vvalter/InversesPendel/EZS/build/CMakeFiles/serialMultiplex.dir
+/home/vvalter/InversesPendel/EZS/build/CMakeFiles/flash.dir
+/home/vvalter/InversesPendel/EZS/build/CMakeFiles/ecos.dir

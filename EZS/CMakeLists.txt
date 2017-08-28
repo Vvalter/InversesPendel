@@ -24,7 +24,7 @@ set(EZS_ARCH stm32f4)
 
 include_directories(${PROJECT_SOURCE_DIR}/libEZS/include)
 include_directories(${OPENCM3_PATH}/include)
-include_directories(${PROJECT_SOURCE_DIR}/include)
+include_directories(${PROJECT_SOURCE_DIR}/../include)
 
 add_definitions("-D EZS_DUMB_SERIAL")
 add_definitions("-D USE_HAL_DRIVER")
@@ -46,8 +46,8 @@ set(LIBEZS_SOURCES
 ECOS_EZS_ADDLIB("${OPENCM3_PATH}/lib/libopencm3_stm32f4.a")
 
 SET(SRC_LIST
-	vortrag.c
-	src/lib.c
+        ../src/main.c
+	../src/lib.c
 	${LIBEZS_SOURCES}
 	${CMSIS_SOURCES}
 	)
