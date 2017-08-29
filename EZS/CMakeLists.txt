@@ -50,6 +50,7 @@ SET(SRC_LIST
         ../src/state_machine.c
 	../src/lib.c
 	../src/aufschwingen.c
+	../src/messung.c
 	${LIBEZS_SOURCES}
 	${CMSIS_SOURCES}
 	)
