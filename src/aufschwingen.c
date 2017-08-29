@@ -57,7 +57,7 @@ enum state handle_going_goal(struct PeripheralState *st){
                 st->rightBound= rightWall - width * 0.1;
 
                 wackelStart = st->time;
-                wackelAnzahl = 0;
+                //wackelAnzahl = 0;
                 return WACKEL_LINKS;
         } else if (st->positionWaggon < goal) {
                 driveRight(SPEED);
@@ -103,13 +103,15 @@ enum state handle_wackel_rechts(struct PeripheralState *st){
         }
 }
 enum state handle_aufschwingen_warten(struct PeripheralState *st){
-         if (abs(st->positionPendulum) < 300) {
-                 impulsStart = st->time;
-                 impulsDirection = st->positionPendulum / abs(st->positionPendulum);
-                 return AUFSCHWINGEN_IMPULS;
-         } else {
-                 return AUFSCHWINGEN_WARTEN;
-         }
+        breakMotor();
+
+        if (abs(st->positionPendulum) < 300) {
+                impulsStart = st->time;
+                impulsDirection = st->positionPendulum / abs(st->positionPendulum);
+                return AUFSCHWINGEN_IMPULS;
+        } else {
+                return AUFSCHWINGEN_WARTEN;
+        }
 }
 enum state handle_aufschwingen_impuls(struct PeripheralState *st){
         if (st->time - impulsStart > IMPULS_LENGTH) {

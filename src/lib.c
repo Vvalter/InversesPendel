@@ -231,7 +231,6 @@ void startMotor(void) {
 }
 
 void driveLeft(float speed) {
-        speed = 1.0f;
         timer_set_oc_value(TIM4, TIM_OC1, PWM_PERIOD*(1.0f-speed));
         timer_set_oc_value(TIM4, TIM_OC2, PWM_PERIOD);
 }
@@ -289,6 +288,9 @@ void initHardware(void) {
         initRotaryEncoderTimer(TIM2, GPIOA, GPIO5, GPIO_AF1, GPIOA, GPIO1, GPIO_AF1);
         // Position Pendulum
         initRotaryEncoderTimer(TIM3, GPIOC, GPIO6, GPIO_AF2, GPIOC, GPIO7, GPIO_AF2);
+        timer_disable_counter(TIM3);
+        timer_set_period(TIM3, 2399);
+        timer_enable_counter(TIM3);
         // IN1
         pwm_init(TIM4, 1, PWM_PERIOD, GPIOB, GPIO6, GPIO_AF2);
         // IN2
