@@ -22,7 +22,7 @@ static const char *stateToString(enum state st) {
                 case WACKEL_RECHTS: return "WACKEL_RECHTS"; break;
                 case AUFSCHWINGEN_IMPULS: return "AUFSCHWINGEN_IMPULS"; break;
                 case AUFSCHWINGEN_WARTEN: return "AUFSCHWINGEN_WARTEN"; break;
-                case MOTOR_MESSUNG_START: return "MOTOR_MESSUNG_START"; break;
+                case MOTOR_MESSUNG_INIT: return "MOTOR_MESSUNG_INIT"; break;
                 case MOTOR_MESSUNG_ACTION: return "MOTOR_MESSUNG_ACTION"; break;
                 case MOTOR_MESSUNG_OUTPUT: return "MOTOR_MESSUNG_OUTPUT"; break;
                 case PID_INIT: return "PID_INIT"; break;
@@ -95,8 +95,8 @@ bool state_machine_step(void) {
                 case AUFSCHWINGEN_IMPULS:
                         currentState = handle_aufschwingen_impuls(&peripheralState);
                         break;
-                case MOTOR_MESSUNG_START:
-                        currentState = handle_motor_messung_start(&peripheralState);
+                case MOTOR_MESSUNG_INIT:
+                        currentState = handle_motor_messung_init(&peripheralState);
                         break;
                 case MOTOR_MESSUNG_ACTION:
                         currentState = handle_motor_messung_action(&peripheralState);

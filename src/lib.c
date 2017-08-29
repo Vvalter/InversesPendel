@@ -231,6 +231,7 @@ void startMotor(void) {
 }
 
 void driveLeft(float speed) {
+        speed = 1.0f;
         timer_set_oc_value(TIM4, TIM_OC1, PWM_PERIOD*(1.0f-speed));
         timer_set_oc_value(TIM4, TIM_OC2, PWM_PERIOD);
 }

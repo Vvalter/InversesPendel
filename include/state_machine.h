@@ -20,7 +20,7 @@ enum state {
         WACKEL_LINKS, WACKEL_RECHTS,
         AUFSCHWINGEN_WARTEN, AUFSCHWINGEN_IMPULS,
         // Defined in messung.c
-        MOTOR_MESSUNG_START, MOTOR_MESSUNG_ACTION, MOTOR_MESSUNG_OUTPUT,
+        MOTOR_MESSUNG_INIT, MOTOR_MESSUNG_ACTION, MOTOR_MESSUNG_OUTPUT,
         // Defined in pid.c
         PID_INIT, PID_STEP,
         // Defined in state_machine.c
@@ -40,7 +40,7 @@ enum state handle_wackel_rechts(struct PeripheralState *peripheralState);
 enum state handle_aufschwingen_warten(struct PeripheralState *peripheralState);
 enum state handle_aufschwingen_impuls(struct PeripheralState *peripheralState);
 
-enum state handle_motor_messung_start(struct PeripheralState *peripheralState);
+enum state handle_motor_messung_init(struct PeripheralState *peripheralState);
 enum state handle_motor_messung_action(struct PeripheralState *peripheralState);
 enum state handle_motor_messung_output(struct PeripheralState *peripheralState);
 
