@@ -25,6 +25,8 @@ static const char *stateToString(enum state st) {
                 case MOTOR_MESSUNG_START: return "MOTOR_MESSUNG_START"; break;
                 case MOTOR_MESSUNG_ACTION: return "MOTOR_MESSUNG_ACTION"; break;
                 case MOTOR_MESSUNG_OUTPUT: return "MOTOR_MESSUNG_OUTPUT"; break;
+                case PID_INIT: return "PID_INIT"; break;
+                case PID_STEP: return "PID_STEP"; break;
                 case IDLE: return "IDLE"; break;
         }
         return "NONE";
@@ -55,7 +57,7 @@ void state_machine_init(void) {
         readPeripheralState(&peripheralState);
         peripheralState.leftBound = INT32_MIN;
         peripheralState.rightBound = INT32_MAX;
-        currentState = MOTOR_MESSUNG_START;
+        currentState = GOING_LEFT;
 }
 /**
  * Continously called. If true is returned the application terminates.
@@ -102,7 +104,14 @@ bool state_machine_step(void) {
                 case MOTOR_MESSUNG_OUTPUT:
                         currentState = handle_motor_messung_output(&peripheralState);
                         break;
-                case IDLE: breakMotor();
+                case PID_INIT:
+                        currentState = handle_pid_init(&peripheralState);
+                        break;
+                case PID_STEP:
+                        currentState = handle_pid_step(&peripheralState);
+                        break;
+                case IDLE:
+                        breakMotor();
                         break;
         }
 

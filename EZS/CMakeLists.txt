@@ -51,6 +51,7 @@ SET(SRC_LIST
 	../src/lib.c
 	../src/aufschwingen.c
 	../src/messung.c
+	../src/pid.c
 	${LIBEZS_SOURCES}
 	${CMSIS_SOURCES}
 	)
