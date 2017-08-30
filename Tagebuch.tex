@@ -1,0 +1,69 @@
+\documentclass[fontsize=12pt,a4paper,parskip]{scrartcl}
+ 
+\usepackage[T1]{fontenc}		% Silbentrennung bei Sonderzeichen
+\usepackage[utf8]{inputenc}		% Direkte Angabe von Umlauten im Dokument.
+\usepackage[ngerman]{babel}		% Deutsche Sprachanpassungen
+\usepackage{lmodern}			% Schriftart Latin Modern
+\usepackage{amssymb,amsmath}	% Mathematische Symbole
+\usepackage[numbers]{natbib}	% Zitate
+\usepackage{graphicx}			% Einbindung von extern erzeugten Graphiken
+\usepackage{subfig} 			% Für Subfigures
+\usepackage{caption} 			% Textunterschriften von subfloats
+\usepackage{siunitx}			% Wissenschaftliche Einheiten
+\usepackage{listings}			% Einbinden/Listen von Codebeispielen
+
+% Einbinden von SVG-Vektorgraphiken (Inkscape)
+\usepackage{color}
+\usepackage{transparent}
+
+\usepackage[colorlinks=false,bookmarks=false,
+  pdftitle={Titel einfügen},
+  pdfsubject={Diplomarbeit am Lehrstuhl für Sensorik, Friedrich-Alexander-Universität Erlangen-Nürnberg},
+  pdfkeywords={LSE, FAU, Diplomarbeit, weitere Stichwörter},
+  pdfauthor={Name einfügen},
+  urlcolor=blue,
+  pdfstartview=Fit
+  ]{hyperref}
+
+\sisetup{locale=DE}
+
+\begin{document}
+
+
+\let\raggedsection\centering
+\section*{Tagebuch Blockpraktikum}
+\let\raggedsection\raggedright
+
+\subsection*{28.08.2017}
+
+Zuallererst erfolgt die Wiederinbetriebnahme des Aufbaus. Hierzu wird die Funktion des Kontrollboards, des Motors und der Taster für die Begrenzung der Wegstrecke überprüft und gegebenfalls wiederhergestellt.
+
+Zur vollständigen Beschreibung der Regelstrecke wird ein Modell für Simulink erstellt.
+
+Softwareseitig wird eine Restrukturierung des Codes vorgenommen. Die Sofware besteht jetzt aus einem Zustandsautomaten, aus dem die jeweiligen Betriebszustände gewählt werden können. Die einzelnen Betriebszustände werden druch Funktionen definiert, die aus dem Zustandsautomaten aufgerufen werden. Durch diese Modularisierung können weitere Funktionen komfortabel hinzugefügt werden.
+
+Zusätzlich wird eine Dokumentation zur Ansteuerung und zum Auslesen der verwendeten Drehgeber sowie der für die Steuerung der Motoren nötigen H-Brücke.
+
+
+\subsection*{29.08.2017}
+
+Fertigstellung der Dokumentation über Drehgeber und H-Brücke.
+
+Zum Verfahren des Schlittens stehen unterschiedlich starke E-Motoren sowie Motoren mit und ohne Getriebe zur Verfügung. Zuerst wird die Tauglichkeit der einzelnen E-Motoren an einem Labornetzteil mittels Spannungssweep überprüft. Anschließend erfolgt die elektrische Charakterisierung, bei der Drehzahl und Stromaufnahme bei Spannungssprüngen aufgenommen werden. Zusätzlich wird die mechanische Charakterisierung (Sprung des Duty Cycles) des Motors allein und im Aufbau durchgeführt.
+
+Im Steuerboard ist eine Funktion zur Messung der Motorstroms eingebaut. Diese wird mit dem ausgewählten Motor getestet und kalibriert.
+
+Die Modellbildung des Pendels zur Erstellung des Simulink-Modells wird durchgeführt.
+
+Zur Minimierung der Quetschgefahr wird eine Sicherheitsabdeckung vor den Laufweg des Schlittens entworfen. Zusätzlich erfolgt der Entwurf zur Unterbringung der Elektronik in einem Gehäuse.
+
+
+
+\subsection*{30.08.2017}
+
+\subsection*{31.08.2017}
+
+\subsection*{01.09.2017}
+
+
+\end{document}
