@@ -12,6 +12,7 @@
 int printf(const char*, ...);
 
 static enum state currentState;
+static int step = 0;
 
 static const char *stateToString(enum state st) {
         switch (st) {
@@ -37,16 +38,23 @@ static struct PeripheralState peripheralState;
 static void readPeripheralState(struct PeripheralState *st) {
         st->positionWaggon = (int32_t) timer_get_counter(TIM2);
         st->positionPendulum = (int16_t) timer_get_counter(TIM3);
-        // TODO
-        st->positionPendulum = ((st->positionPendulum % 2400) + 2400) % 2400;
-        if (st->positionPendulum > 1200) st->positionPendulum -= 2400;
         st->time = (uint32_t) timer_get_counter(TIM5);
         st->tasterLeft = !readPin(GPIOD, GPIO2);
         st->tasterRight = !readPin(GPIOD, GPIO1);
 }
 
 static void printPeripheralState(struct PeripheralState *st) {
-        //ezs_printf("PeripheralState: Waggon %d, Pendulum %d, time %u, Taster %d/%d currentState: %s\n", (int)st->positionWaggon, (int)st->positionPendulum, (unsigned int) st->time, (int) st->tasterLeft, (int)st->tasterRight, stateToString(currentState));
+        step ++;
+        if (step % 1000 == 0) {
+                //ezs_printf("PeripheralState: Waggon %d, Pendulum %d, time %u, Taster %d/%d currentState: %s\n", (int)st->positionWaggon, (int)st->positionPendulum, (unsigned int) st->time, (int) st->tasterLeft, (int)st->tasterRight, stateToString(currentState));
+        }
+}
+
+static void reset(void) {
+        readPeripheralState(&peripheralState);
+        peripheralState.leftBound = INT32_MIN;
+        peripheralState.rightBound = INT32_MAX;
+        currentState = PID_INIT;
 }
 
 /**
@@ -54,10 +62,7 @@ static void printPeripheralState(struct PeripheralState *st) {
  */
 void state_machine_init(void) {
         initHardware();
-        readPeripheralState(&peripheralState);
-        peripheralState.leftBound = INT32_MIN;
-        peripheralState.rightBound = INT32_MAX;
-        currentState = GOING_LEFT;
+        reset();
 }
 /**
  * Continously called. If true is returned the application terminates.
@@ -70,6 +75,11 @@ bool state_machine_step(void) {
          */
         if (peripheralState.positionWaggon >= peripheralState.rightBound || peripheralState.positionWaggon <= peripheralState.leftBound) {
                 currentState = GOING_GOAL;
+        }
+
+        if (peripheralState.tasterLeft && peripheralState.tasterRight) {
+                reset();
+                return false;
         }
 
         printPeripheralState(&peripheralState);
@@ -112,6 +122,9 @@ bool state_machine_step(void) {
                         break;
                 case IDLE:
                         breakMotor();
+                        if (convertPendulumAngleToUpper(peripheralState.positionPendulum) == 0) {
+                                currentState = PID_INIT;
+                        }
                         break;
         }
 

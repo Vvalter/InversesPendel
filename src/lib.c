@@ -309,3 +309,21 @@ void initHardware(void) {
         initADC(GPIOB, GPIO0);
 }
 
+int convertPendulumAngleToUpper(int16_t positionPendulum) {
+        return 1200 - positionPendulum;
+}
+int convertPendulumAngleToLower(int16_t positionPendulum) {
+        if (positionPendulum > 1200) {
+                return positionPendulum - 2400;
+        } else {
+                return positionPendulum;
+        }
+}
+double fabs(double a) {
+        if (a < 0) return -a;
+        else return a;
+}
+double fmin(double a, double b) {
+        if (a < b) return a;
+        else return b;
+}

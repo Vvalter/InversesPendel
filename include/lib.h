@@ -57,6 +57,15 @@ void driveRightFast(void);
 
 void initHardware(void);
 
+/*
+ * Helper Functions
+ */
+int convertPendulumAngleToUpper(int16_t positionPendulum);
+int convertPendulumAngleToLower(int16_t positionPendulum);
+
+double fmin(double a, double b);
+double fabs(double a);
+
 #ifdef __cplusplus
 }
 #endif

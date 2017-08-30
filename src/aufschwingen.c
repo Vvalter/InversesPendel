@@ -104,10 +104,14 @@ enum state handle_wackel_rechts(struct PeripheralState *st){
 }
 enum state handle_aufschwingen_warten(struct PeripheralState *st){
         breakMotor();
+        int pendulum = convertPendulumAngleToLower(st->positionPendulum);
+        if (abs(convertPendulumAngleToUpper(st->positionPendulum)) < 110) {
+                return PID_INIT;
+        }
 
-        if (abs(st->positionPendulum) < 300) {
+        if (abs(pendulum) < 300) {
                 impulsStart = st->time;
-                impulsDirection = st->positionPendulum / abs(st->positionPendulum);
+                impulsDirection = pendulum / abs(pendulum);
                 return AUFSCHWINGEN_IMPULS;
         } else {
                 return AUFSCHWINGEN_WARTEN;
