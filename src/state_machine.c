@@ -28,6 +28,8 @@ static const char *stateToString(enum state st) {
                 case MOTOR_MESSUNG_OUTPUT: return "MOTOR_MESSUNG_OUTPUT"; break;
                 case PID_INIT: return "PID_INIT"; break;
                 case PID_STEP: return "PID_STEP"; break;
+                case PWM_MESSUNG_INIT: return "PWM_MESSUNG_INIT"; break;
+                case PWM_MESSUNG_ACTION: return "PWM_MESSUNG_ACTION"; break;
                 case IDLE: return "IDLE"; break;
         }
         return "NONE";
@@ -54,7 +56,7 @@ static void reset(void) {
         readPeripheralState(&peripheralState);
         peripheralState.leftBound = INT32_MIN;
         peripheralState.rightBound = INT32_MAX;
-        currentState = PID_INIT;
+        currentState = PWM_MESSUNG_INIT;
 }
 
 /**
@@ -119,6 +121,12 @@ bool state_machine_step(void) {
                         break;
                 case PID_STEP:
                         currentState = handle_pid_step(&peripheralState);
+                        break;
+                case PWM_MESSUNG_INIT:
+                        currentState = handle_pwm_messung_init(&peripheralState);
+                        break;
+                case PWM_MESSUNG_ACTION:
+                        currentState = handle_pwm_messung_action(&peripheralState);
                         break;
                 case IDLE:
                         breakMotor();
