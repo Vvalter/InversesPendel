@@ -28,7 +28,7 @@ int initRotaryEncoderTimer(uint32_t tim, uint32_t portA, uint16_t pinA, uint8_t 
     gpio_mode_setup(portB, GPIO_MODE_AF, GPIO_PUPD_PULLUP, pinB);
     gpio_set_af(portB, afB, pinB);
 
-    timer_reset(tim);
+    //timer_reset(tim);
 
     timer_set_mode(tim, TIM_CR1_CKD_CK_INT, //For dead time and filter sampling, not important for now.
 	    TIM_CR1_CMS_EDGE,	//TIM_CR1_CMS_EDGE
@@ -163,12 +163,22 @@ void initADC(uint32_t port, uint16_t pin)
         adc_set_regular_sequence(ADC1, 1, channel_array);
 }
 
-uint16_t readADCBlocking()
+uint16_t readADCBlocking(void)
 {
         adc_start_conversion_regular(ADC1);
         while (!adc_eoc(ADC1));
         uint16_t reg16 = adc_read_regular(ADC1);
         return reg16;
+}
+
+float readPoti(void) {
+        uint16_t adcVal = readADCBlocking();
+        const uint16_t MIN = 7, MAX = 4085;
+
+        if (adcVal < MIN) adcVal = MIN;
+        else if (adcVal > MAX) adcVal = MAX;
+
+        return ((float)(adcVal - MIN)) / (MAX-MIN);
 }
 
 void pwm_init(uint32_t timer, uint8_t channel, uint32_t period, uint32_t port, uint16_t pin, uint16_t af) {
@@ -185,7 +195,6 @@ void pwm_init(uint32_t timer, uint8_t channel, uint32_t period, uint32_t port, u
   }
 
   // Timer Base Configuration
-  // timer_reset(timer);
   timer_set_mode(timer, TIM_CR1_CKD_CK_INT, // clock division
                         TIM_CR1_CMS_EDGE,   // Center-aligned mode selection
                         TIM_CR1_DIR_UP);    // TIMx_CR1 DIR: Direction
@@ -291,6 +300,8 @@ void initHardware(void) {
         timer_disable_counter(TIM3);
         timer_set_period(TIM3, 2399);
         timer_enable_counter(TIM3);
+
+        timer_reset(TIM4);
         // IN1
         pwm_init(TIM4, 1, PWM_PERIOD, GPIOB, GPIO6, GPIO_AF2);
         // IN2
