@@ -23,6 +23,8 @@ enum state {
         MOTOR_MESSUNG_INIT, MOTOR_MESSUNG_ACTION, MOTOR_MESSUNG_OUTPUT,
         // Defined in pid.c
         PID_INIT, PID_STEP,
+        // Defined in calibration.c
+        PWM_MESSUNG_INIT, PWM_MESSUNG_ACTION,
         // Defined in state_machine.c
         IDLE};
 
@@ -46,4 +48,7 @@ enum state handle_motor_messung_output(struct PeripheralState *peripheralState);
 
 enum state handle_pid_init(struct PeripheralState *peripheralState);
 enum state handle_pid_step(struct PeripheralState *peripheralState);
+
+enum state handle_pwm_messung_init(struct PeripheralState *peripheralState);
+enum state handle_pwm_messung_action(struct PeripheralState *peripheralState);
 #endif

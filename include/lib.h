@@ -42,6 +42,7 @@ bool readPin(uint32_t port, uint16_t pin);
  */
 void initADC(uint32_t port, uint16_t pin);
 uint16_t readADCBlocking(void);
+float readPoti(void);
 
 void pwm_init(uint32_t timer, uint8_t channel, uint32_t period, uint32_t port, uint16_t pin, uint16_t af);
 
