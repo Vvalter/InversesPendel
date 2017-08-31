@@ -5,7 +5,7 @@
 #include "state_machine.h"
 #include "lib.h"
 
-#define REGEL_INTERVALL TIMER_TICKS_PER_MICROSECOND * 125
+#define REGEL_INTERVALL TIMER_TICKS_PER_MICROSECOND * 12
 
 int printf(const char*, ...);
 
@@ -13,16 +13,19 @@ static int32_t lastPositionWaggon;
 static int16_t lastPositionPendulum;
 static double error_sum;
 
-static const double MAX_ERROR_SUM = 50000000;
 
 static int16_t lastError;
 static uint32_t lastTime;
 
 static int cnt = 0;
 
-static const double Kp = -0.90;
-static const double Ki = -0.000000002;
-static const double Kd = -0.5 * 700 * 100000;
+#define KiDEF  (-0.00000003)
+
+static const double Kp = -0.72;
+static const double Ki = KiDEF;
+static const double Kd = 0;
+
+static const double MAX_ERROR_SUM = -1/KiDEF;
 
 
 enum state handle_pid_init(struct PeripheralState *st) {
