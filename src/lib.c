@@ -1,5 +1,7 @@
 #include "lib.h"
 
+static float PWM_OFFSET_LEFT = 0.0f, PWM_OFFSET_RIGHT = 0.0f;
+
 void initRCC(void) {
         rcc_clock_setup_hse_3v3(&rcc_hse_8mhz_3v3[RCC_CLOCK_3V3_168MHZ]);
 	// It might be neccessary to wait some cycles after enabling the rcc
@@ -239,8 +241,17 @@ void startMotor(void) {
         setPinHigh(GPIOA, GPIO15);
 }
 
+void setPWMOffsetLeft(float offset) {
+        PWM_OFFSET_LEFT = offset;
+}
+
+void setPWMOffsetRight(float offset) {
+        PWM_OFFSET_RIGHT = offset;
+}
+
 void driveLeft(float speed) {
-        timer_set_oc_value(TIM4, TIM_OC1, PWM_PERIOD*(1.0f-speed));
+        speed = 1.0f - (speed * (1 - PWM_OFFSET_LEFT) + PWM_OFFSET_LEFT);
+        timer_set_oc_value(TIM4, TIM_OC1, PWM_PERIOD*speed);
         timer_set_oc_value(TIM4, TIM_OC2, PWM_PERIOD);
 }
 void driveLeftFast(void) {
@@ -254,8 +265,9 @@ void breakMotor(void) {
 }
 
 void driveRight(float speed) {
+        speed = 1.0f - (speed * (1 - PWM_OFFSET_RIGHT) + PWM_OFFSET_RIGHT);
         timer_set_oc_value(TIM4, TIM_OC1, PWM_PERIOD);
-        timer_set_oc_value(TIM4, TIM_OC2, PWM_PERIOD*(1.0f-speed));
+        timer_set_oc_value(TIM4, TIM_OC2, PWM_PERIOD*speed);
 }
 void driveRightFast(void) {
         timer_set_oc_value(TIM4, TIM_OC1, PWM_PERIOD);
